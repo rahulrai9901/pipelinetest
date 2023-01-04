@@ -45,4 +45,4 @@ steps:
   displayName: 'Unit Test Code Coverage'
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(Build.SourcesDirectory)/**/MyCoverage/coverage.cobertura.xml'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/MyCoverage/coverage.cobertura.xml'
