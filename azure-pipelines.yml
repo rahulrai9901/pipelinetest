@@ -32,3 +32,11 @@ steps:
     projects: "**/*.csproj"
     arguments: '--configuration $(buildConfiguration)'
 
+
+- task: DotNetCoreCLI@2
+  displayName: "Build"
+  inputs:
+    command: 'test'
+    projects: "**/pipelineunittest.csproj"
+    arguments: '--configuration $(buildConfiguration)'  
+
