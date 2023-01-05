@@ -38,11 +38,11 @@ steps:
   inputs:
     command: 'test'
     projects: "**/pipelineunittest.csproj"
-    arguments: "--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura"
+    arguments: "--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./MyCoverage/"
     publishTestResults: true  
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Unit Test Code Coverage'
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: "**/*coverage.cobertura.xml"
+    summaryFileLocation: '$(Build.SourcesDirectory)/**/MyCoverage/coverage.cobertura.xml'
